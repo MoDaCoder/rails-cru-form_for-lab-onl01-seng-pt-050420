@@ -1,0 +1,28 @@
+<h2>Song:</h2>
+<%= form_for song do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :bio %>
+<%= f.text_area :bio %>
+<%= f.submit %>
+
+<%= f.fields_for :artist do |artist| %>
+<p>
+    <h2>Artist:</h2>
+    <%= artist.label :name %>
+    <%= artist.text_field :name %>
+    <%= artist.label :bio %>
+    <%= artist.text_area :bio %>
+</p>
+<%end%>
+<%=f.submit %>
+
+<%= f.fields_for :genre do |genre| %>
+<p>
+    <h2>Genre:</h2>
+    <%= genre.label :name %>
+    <%= genre.text_field :name %>
+</p>
+<%end%>
+<%= f.submit %>
+<%end%>
