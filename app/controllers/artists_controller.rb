@@ -23,7 +23,6 @@ class ArtistsController < ApplicationController
     end
 
     def update
-        byebug
         @artist = Artist.find(params[:id])
         @artist.update(artist_params(:name, :bio))
         redirect_to artist_path(@artist.id)
